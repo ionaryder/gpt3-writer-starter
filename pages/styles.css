@@ -413,3 +413,35 @@ textarea {
         transform: rotate(360deg);
     }
 }
+
+.message-box {
+    max-width: 400px;
+    padding: 25px 35px;
+    background: #fefefe;
+    text-align: center;
+}
+.message-bubble {
+    max-width: 300px;
+    padding: 10px 15px;
+    background: #fdf9d6;
+    border-radius: 1rem;
+    margin-bottom: 15px;
+}
+.own-message {
+    background: #caeefb;
+    text-align: right;
+}
+.input-text {
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    width: 100%;
+}
+.send-button {
+    background: #00ccff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 12px;
+}
