@@ -39,57 +39,71 @@ const callGenerateEndpoint = async () => {
       <Head>
         <title>GPT-3 Writer | buildspace</title>
       </Head>
-      <div className="container">
-        <div className="header">
-          <div className="header-title">
-            <h1>Chat Lingual</h1>
+
+      <div className="section">
+          <div className="header">
+            <div className="header-title">
+              <h1>Chat Lingual</h1>
+            </div>
+            <div className="header-subtitle">
+              <h2>Learn French with your AI buddy</h2>
+            </div>
+            <a href="#intro">
+            <div className="button">
+              Let's get started
+            </div>
+            </a>
           </div>
-          <div className="header-subtitle">
-            <h2>Learn French with your AI buddy</h2>
-          </div>
-        </div>
+      </div>
+
+      <div className="section" id="intro">
+            <div className="introduction">
+              <h2>Meet AIdan, your AI buddy
+                <br /><br />
+
+              AIdan wants to help you learn French through conversation. If you start chatting to AIdan in French (or even English if you’re really struggling) AIdan will respond with feedback on what you said, and an answer to you conversation.
+              <br /><br />
+              You don’t need to get creative AIdan will always keep the conversation going, no need to double text.</h2>
+            </div>
+      </div>
+
+
+      <div className="section">
         <div className="prompt-container">
-        <textarea
-          className="prompt-box"
-          placeholder="start typing here"
-          value={userInput}
-          onChange={onUserChangedText}
-        />;
-        </div>
-      </div>
-
-      {/* <div class="message-box">
-          <div class="message-bubble">Hi, how are you?</div>
-          <div class="message-bubble own-message">I'm good, how about you?</div>
-
-          <div class="message-bubble">I'm doing well, thanks!</div>
-          <input type="text" class="input-text" placeholder="Type your message here" />
-          <button class="send-button">Send</button>
-      </div> */}
-
-
-        <div className="prompt-buttons">
-        <a
-          className={isGenerating ? 'generate-button loading' : 'generate-button'}
-          onClick={callGenerateEndpoint}
-        >
-           <div className="generate">
-    {isGenerating ? <span className="loader"></span> : <p>Generate</p>}
-    </div>
-        </a>
-      </div>
-      {apiOutput && (
-      <div className="output">
-        <div className="output-header-container">
-          <div className="output-header">
-            <h3>AIdan says:</h3>
+          <textarea
+            className="prompt-box"
+            placeholder="Speak with AIdan!"
+            value={userInput}
+            onChange={onUserChangedText}
+          />
           </div>
-        </div>
-        <div className="output-content">
-          <p>{apiOutput}</p>
-        </div>
+            <div className="prompt-buttons">
+          <a
+            className={isGenerating ? 'generate-button loading' : 'generate-button'}
+            onClick={callGenerateEndpoint}
+          >
+            <div className="generate">
+            {isGenerating ? <span className="loader"></span> : <p>Generate</p>}
+            </div>
+                </a>
+              </div>
+              {apiOutput && (
+              <div className="output">
+                <div className="output-header-container">
+                  <div className="output-header">
+                    <h3>AIdan says:</h3>
+                  </div>
+                </div>
+                <div className="output-content">
+                  <p>{apiOutput}</p>
+                </div>
+              </div>
+            )}
       </div>
-    )}
+        
+      
+
+
 
       <div className="badge-container grow">
         <a
@@ -100,7 +114,7 @@ const callGenerateEndpoint = async () => {
 
           <div className="badge">
             <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>build with buildspace</p>
+            <p>build with buildspace, learn with AIdan</p>
           </div>
         </a>
       </div>
