@@ -1,13 +1,17 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import buildspaceLogo from '../assets/buildspace-logo.png';
+import sendicon from '../assets/sendicon.png';
 import { useState } from 'react';
 
 
 const Home = () => {
 
   const [userInput, setUserInput] = useState('');
+  const [previousUserInput, setPreviousUserInput] = useState('');
   const [apiOutput, setApiOutput] = useState('')
+  const [answer, setAnswer] = useState('')
+  const [comment, setComment] = useState('')
 const [isGenerating, setIsGenerating] = useState(false)
 
 const callGenerateEndpoint = async () => {
@@ -27,17 +31,31 @@ const callGenerateEndpoint = async () => {
   console.log("OpenAI replied...", output.text)
 
   setApiOutput(`${output.text}`);
+  organiseOutput()
   setIsGenerating(false);
+  setPreviousUserInput(userInput);
+  setUserInput('');
 }
   const onUserChangedText = (event) => {
     console.log(event.target.value);
     setUserInput(event.target.value);
   };
 
+  const organiseOutput = () => {
+      console.log("organising output")
+      var organizing = apiOutput.split("Answer:")
+      var comment = organizing[0].split("Comment:")
+
+      setComment(comment[1])
+      setAnswer(organizing[1])
+
+
+  }
+
   return (
     <div className="root">
       <Head>
-        <title>GPT-3 Writer | buildspace</title>
+        <title>Chat Lingual</title>
       </Head>
 
       <div className="section">
@@ -48,27 +66,50 @@ const callGenerateEndpoint = async () => {
             <div className="header-subtitle">
               <h2>Learn French with your AI buddy</h2>
             </div>
-            <a href="#intro">
-            <div className="button">
-              Let's get started
-            </div>
-            </a>
+            
+            {/* <a href="#chat">
+            <div className="arrow animated bounce"></div>
+            </a> */}
           </div>
       </div>
 
-      <div className="section" id="intro">
-            <div className="introduction">
-              <h2>Meet AIdan, your AI buddy
-                <br /><br />
+      <div className="section" id="chat">
 
-              AIdan wants to help you learn French through conversation. If you start chatting to AIdan in French (or even English if you’re really struggling) AIdan will respond with feedback on what you said, and an answer to you conversation.
-              <br /><br />
-              You don’t need to get creative AIdan will always keep the conversation going, no need to double text.</h2>
+      <div className="speechbubble">
+          <p><b>Bonjour! My names AIdan, and I'm your AI buddy who wants to help you learn French. Say anything, and let our lesson begin!</b></p>
+          </div>
+
+      {apiOutput && (
+        
+        
+        <div className="messagecontainer">
+          
+          <div className="rightcontainer">
+           <div className="speechbubbleuser">
+            <div className="output-content">
+                    <p>{previousUserInput}</p>
             </div>
-      </div>
-
-
-      <div className="section">
+          </div>
+          <div className="comment">
+          <p>{comment}</p>
+          </div>
+        </div>
+        
+          <div className="speechbubble">
+                <div className="output">
+                  
+                  <div className="output-header-container">
+                    
+                  </div>
+                  <div className="output-content">
+                    
+                    <p>{answer}</p>
+                  </div>
+                  </div>
+            </div>
+          </div>
+        )}
+        <div className="container">
         <div className="prompt-container">
           <textarea
             className="prompt-box"
@@ -77,28 +118,21 @@ const callGenerateEndpoint = async () => {
             onChange={onUserChangedText}
           />
           </div>
+          
             <div className="prompt-buttons">
           <a
             className={isGenerating ? 'generate-button loading' : 'generate-button'}
             onClick={callGenerateEndpoint}
           >
+            
             <div className="generate">
-            {isGenerating ? <span className="loader"></span> : <p>Generate</p>}
+            
+            {isGenerating ? <span className="loader"></span> : <Image src={sendicon} />}
             </div>
                 </a>
               </div>
-              {apiOutput && (
-              <div className="output">
-                <div className="output-header-container">
-                  <div className="output-header">
-                    <h3>AIdan says:</h3>
-                  </div>
-                </div>
-                <div className="output-content">
-                  <p>{apiOutput}</p>
-                </div>
-              </div>
-            )}
+            </div>
+
       </div>
         
       
