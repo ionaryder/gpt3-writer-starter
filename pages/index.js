@@ -79,7 +79,8 @@ const callGenerateEndpoint = async () => {
           <p><b>Bonjour! My names AIdan, and I'm your AI buddy who wants to help you learn French. Say anything, and let our lesson begin!</b></p>
           </div>
 
-      {apiOutput &&(
+
+      {apiOutput && (
         
         
         <div className="messagecontainer">
@@ -92,6 +93,7 @@ const callGenerateEndpoint = async () => {
           </div>
           <div className="comment">
           <p>{comment}</p>
+
           </div>
         </div>
         
