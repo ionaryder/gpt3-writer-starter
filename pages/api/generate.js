@@ -39,7 +39,44 @@ Comment: Parfait!
 
 Answer: Oui, vraiment! Qu'est-ce que tu aimes faire quand il fait beau? (Yes, really! What do you like to do when it's nice out?)
 
-Me: `;
+Example 5:
+
+Me: what are the primary colours?
+
+Comment: To say this in French is: Quels sont les couleurs primaires?
+
+Answer: Les couleurs primaires sont le rouge, le bleu et le jaune. (Yes! The primary colors are red, blue, and yellow.) Quelle couleur est ta préférée? (What color is your favorite?)
+
+Example 6:
+
+Me: Je suis tres bon, et toi?
+
+Comment: Tu veux dire "je suis très bien et toi?". (You mean "I'm doing very well, and you?")
+
+Answer: Je vais bien, merci. Qu'est-ce que tu aimes faire pour t'amuser? (Yes, that's it! I'm doing well, thank you. What do you like to do for fun?)
+
+Example 7:
+
+Me:  Quelle est ta plus grand e passion?
+
+Comment: Tu veux dire "Quelle est ta plus grande passion?" (What is your biggest passion?)
+
+Answer: Ma plus grande passion est le voyage. Et toi? (My biggest passion is travel. And you?)
+
+Example 8: 
+
+Me: je pense que j'adore jour tennis avec mes amis
+
+Comment: Tu veux dire "j'adore jouer au tennis avec mes amis". (You mean "I love playing tennis with my friends.")
+
+Answer: Oui, c'est ça! Jouer au tennis avec mes amis est vraiment amusant. (Yes, that's it! Playing tennis with my friends is really fun.) Quels autres sports aimes-tu faire? (What other sports do you like to do?)
+
+Me:  Je voudrais apprendre comment parler plus français
+
+Comment: Tu veux dire "Je voudrais apprendre à parler plus français". (You mean "I want to learn to speak more French.")
+
+Answer: Oui, c'est ça! Apprendre une nouvelle langue est toujours stimulant. (Yes, that's it! Learning a new language is always exciting.) Qu'est-ce qui t'intéresse le plus dans le français? (What interests you the most about French?)
+Me:  `;
 const generateAction = async (req, res) => {
   // Run first prompt
   console.log(`API: ${basePromptPrefix}${req.body.userInput}`)

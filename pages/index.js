@@ -17,7 +17,7 @@ const [isGenerating, setIsGenerating] = useState(false)
 const callGenerateEndpoint = async () => {
   setIsGenerating(true);
   
-  console.log("Calling OpenAI.....")
+  console.log("Calling OpenAI.....", userInput)
   const response = await fetch('/api/generate', {
     method: 'POST',
     headers: {
@@ -30,24 +30,37 @@ const callGenerateEndpoint = async () => {
   const { output } = data;
   console.log("OpenAI replied...", output.text)
 
+  setAnswer("")
+  setComment("")
   setApiOutput(`${output.text}`);
-  organiseOutput()
+  organiseOutput(`${output.text}`)
   setIsGenerating(false);
   setPreviousUserInput(userInput);
-  setUserInput('');
+  setUserInput("");
 }
   const onUserChangedText = (event) => {
     console.log(event.target.value);
     setUserInput(event.target.value);
   };
 
-  const organiseOutput = () => {
+  const organiseOutput = (output) => {
       console.log("organising output")
-      var organizing = apiOutput.split("Answer:")
-      var comment = organizing[0].split("Comment:")
 
-      setComment(comment[1])
-      setAnswer(organizing[1])
+      if (output.includes("Comment:")) {
+        console.log("comment")
+        var organizing = output.split("Answer:")
+        var comment = organizing[0].split("Comment:")
+
+
+        setComment(comment[1])
+        setAnswer(organizing[1])
+      }
+      else {
+        console.log("no comment")
+        setAnswer(output)
+      }
+
+      
 
 
   }
