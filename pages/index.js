@@ -46,19 +46,22 @@ const callGenerateEndpoint = async () => {
   const organiseOutput = (output) => {
       console.log("organising output")
 
-      if (output.includes("Comment:")) {
-        console.log("comment")
+      if (output.includes("Answer:")) {
+        console.log("answer")
         var organizing = output.split("Answer:")
-        var comment = organizing[0].split("Comment:")
+        console.log("organizing", organizing)
+        // var comment = organizing[0].split("Comment:")
 
 
-        setComment(comment[1])
+        setComment(organizing[0])
         setAnswer(organizing[1])
       }
       else {
-        console.log("no comment")
+        console.log("no answer")
         setAnswer(output)
       }
+
+      console.log("here")
 
       
 
@@ -68,6 +71,14 @@ const callGenerateEndpoint = async () => {
   return (
     <div className="root">
       <Head>
+        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-CM7YXRD53W"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)}
+          gtag('js', new Date());
+
+          gtag('config', 'G-CM7YXRD53W');
+        </script> */}
         <title>Chat Lingual</title>
       </Head>
 

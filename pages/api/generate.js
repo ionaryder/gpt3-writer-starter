@@ -71,11 +71,22 @@ Comment: Tu veux dire "j'adore jouer au tennis avec mes amis". (You mean "I love
 
 Answer: Oui, c'est ça! Jouer au tennis avec mes amis est vraiment amusant. (Yes, that's it! Playing tennis with my friends is really fun.) Quels autres sports aimes-tu faire? (What other sports do you like to do?)
 
+Example 9:
+
 Me:  Je voudrais apprendre comment parler plus français
 
 Comment: Tu veux dire "Je voudrais apprendre à parler plus français". (You mean "I want to learn to speak more French.")
 
 Answer: Oui, c'est ça! Apprendre une nouvelle langue est toujours stimulant. (Yes, that's it! Learning a new language is always exciting.) Qu'est-ce qui t'intéresse le plus dans le français? (What interests you the most about French?)
+
+Example 10:
+
+Me: ques-que tu fais aujourd'hui?
+
+Comment: Tu veux dire "Qu'est-ce que tu fais aujourd'hui?". (You mean "What are you doing today?")
+
+Answer: Aujourd'hui, je suis occupé à apprendre le français. Et toi? (Today I'm busy learning French. And you?)
+
 Me:  `;
 const generateAction = async (req, res) => {
   // Run first prompt
