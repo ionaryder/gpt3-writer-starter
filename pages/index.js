@@ -4,7 +4,7 @@ import buildspaceLogo from '../assets/buildspace-logo.png';
 import sendicon from '../assets/sendicon.png';
 import { useState } from 'react';
 import ReactGA from 'react-ga';
-ReactGA.initialize('G-CM7YXRD53W');
+ReactGA.initialize('G-51M5D3EE82');
 
 
 const Home = () => {
