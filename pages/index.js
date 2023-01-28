@@ -3,6 +3,8 @@ import Image from 'next/image';
 import buildspaceLogo from '../assets/buildspace-logo.png';
 import sendicon from '../assets/sendicon.png';
 import { useState } from 'react';
+import ReactGA from 'react-ga';
+ReactGA.initialize('G-CM7YXRD53W');
 
 
 const Home = () => {
