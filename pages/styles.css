@@ -118,8 +118,8 @@ body {
     position: relative;
     gap: 10px;
     width: 100%;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
     /* background-color: rgb(189, 184, 184); */
 }
 
@@ -204,7 +204,7 @@ body {
     /* place-content: flex-end center;
     align-items: right; */
     display: flex;
-    flex: 0 0 auto;
+    /* flex: 0 0 auto; */
     gap: 16px;
     
     /* width: 100%; */
@@ -231,8 +231,14 @@ body {
     overflow: hidden;
     padding: 20px;
     position: relative;
-    width: 610px;
-    max-width: 1200px;
+    /* background-color: black; */
+    /* width: 610px;
+    max-width: 1200px; */
+
+    /* margin-right: 10px; */
+    /* margin-right: 20px;
+    margin-left: 20px; */
+    /* background-color: black; */
     /* width: 100vw; */
     will-change: transform;
     overflow: auto;
@@ -243,7 +249,7 @@ body {
     letter-spacing: 0px;
     line-height: 1.6em;
     text-align: start;
-    color: rgb(104, 96, 96);
+    color: black;
     text-decoration: none;
     text-transform: none;
 }
@@ -335,6 +341,7 @@ textarea {
     justify-content: flex-start;
     flex-shrink: 0;
     transform: none;
+    /* padding-right: 50px; */
 }
 
 .generate p {
