@@ -43,6 +43,7 @@ body {
 
 .speechbubbleuser {
 	position: relative;
+    /* width: 100%; */
 	width: fit-content;
     padding: 0px 20px;
     margin-left: auto; 
@@ -78,6 +79,8 @@ body {
     padding: 50px 0px;
     margin-left: auto; 
     margin-right: 0;
+    /* padding-left: 10px;
+    padding-right: 10px; */
 }
   
 
@@ -96,11 +99,13 @@ body {
 
 .section {
     height: 100vh;
-    width: 100vw;
+    /* width: 100vw; */
     background-color: #EADAFF;
     align-items: center;
     display: grid;
     place-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .container {
@@ -112,13 +117,15 @@ body {
     /* overflow: auto; */
     position: relative;
     gap: 10px;
-    width: 100vw;
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
     /* background-color: rgb(189, 184, 184); */
 }
 
 .messagecontainer {
-    gap: 10px;
-    width: 50vw;
+    /* gap: 10px;
+    width: 50vw; */
 }
 
 
@@ -199,6 +206,7 @@ body {
     display: flex;
     flex: 0 0 auto;
     gap: 16px;
+    
     /* width: 100%; */
     height: min-content;
     /* background-color: black; */
