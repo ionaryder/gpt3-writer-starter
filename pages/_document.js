@@ -15,7 +15,8 @@ export default function Document() {
           `,
           }}
         /> */}
-
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1988230987229193"
+     crossorigin="anonymous"></script>
         <link rel="shortcut icon" href="favicon.ico" />
         <meta property="og:title" content="Chat Lingual" key="title"/>
         <meta property="og:description" content="Learn French with your AI buddy" key="description"/>
