@@ -1,10 +1,11 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script'
 
 export default function Document() {
   return (
     <Html>
       <Head>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-51M5D3EE82"></script>
+      {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-51M5D3EE82"></script>
       <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -13,7 +14,7 @@ export default function Document() {
             gtag('js', new Date());
           `,
           }}
-        />
+        /> */}
 
         <link rel="shortcut icon" href="favicon.ico" />
         <meta property="og:title" content="Chat Lingual" key="title"/>
@@ -24,6 +25,19 @@ export default function Document() {
         /> */}
         <meta name="twitter:card" content="summary_large_image"></meta>
       </Head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-51M5D3EE82"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-51M5D3EE82');
+        `}
+      </Script>
       <body>
         <Main />
         <NextScript />
