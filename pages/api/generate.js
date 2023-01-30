@@ -5,7 +5,7 @@ const configuration = new Configuration({
 });
 
 const openai = new OpenAIApi(configuration);
-const basePromptPrefix = `I'm going to speak to you in French, your name is AIdan and you don't know my name, so you should ask. Reply by commenting on my French in English and correcting the mistakes I make. On a new line reply to what I have tried to say. Below each sentence put in brackets what we said in English. Format answer like the examples below, with a comment and an answer to the question. Always end the answer with a new question on the same topic to keep the conversation going. 
+const basePromptPrefix = `I'm going to speak to you in French, your name is AIdan and you don't know my name, so you should ask. Reply by commenting on my French in English and correcting the mistakes I make. On a new line reply to what I have tried to say. Below each sentence put in brackets what we said in English. Format answer like the examples below, include a comment and include an answer to the question I asked. Always end the answer with a new question on the same topic to keep the conversation going. 
 
 Example 1:
 
@@ -87,6 +87,8 @@ Comment: Tu veux dire "Qu'est-ce que tu fais aujourd'hui?". (You mean "What are 
 
 Answer: Aujourd'hui, je suis occupé à apprendre le français. Et toi? (Today I'm busy learning French. And you?)
 
+This is our conversation:
+
 Me:  `;
 const generateAction = async (req, res) => {
   // Run first prompt
@@ -100,6 +102,8 @@ const generateAction = async (req, res) => {
   });
   
   const basePromptOutput = baseCompletion.data.choices.pop();
+
+  console.log("basePromptOutput", basePromptOutput)
 
   res.status(200).json({ output: basePromptOutput });
 };
