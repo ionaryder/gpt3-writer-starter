@@ -4,6 +4,7 @@ import buildspaceLogo from '../assets/buildspace-logo.png';
 import sendicon from '../assets/sendicon.png';
 import { useState } from 'react';
 import ReactGA from 'react-ga';
+import Checkbox from './checkbox'
 ReactGA.initialize('G-51M5D3EE82');
 
 
@@ -92,6 +93,7 @@ const callGenerateEndpoint = async () => {
             <div className="header-subtitle">
               <h2>Learn French with your AI buddy</h2>
             </div>
+            {/* <Checkbox /> */}
             
             {/* <a href="#chat">
             <div className="arrow animated bounce"></div>

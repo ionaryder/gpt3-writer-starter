@@ -87,8 +87,6 @@ Comment: Tu veux dire "Qu'est-ce que tu fais aujourd'hui?". (You mean "What are 
 
 Answer: Aujourd'hui, je suis occupé à apprendre le français. Et toi? (Today I'm busy learning French. And you?)
 
-This is our conversation:
-
 Me:  `;
 const generateAction = async (req, res) => {
   // Run first prompt
